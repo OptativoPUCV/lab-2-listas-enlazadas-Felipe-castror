@@ -15,3 +15,19 @@ lu., 24 de mar. de 2025 10:21:09:
  tests:  9|3
 total_score: 35/70
 34feb10
+lu., 24 de mar. de 2025 10:48:32: 
+ list.c | 57 ++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 48 insertions(+), 9 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'pushFront':
+list.c:72:21: error: implicit declaration of function 'create_Node' [-Werror=implicit-function-declaration]
+     Node* newNode = create_Node(data);
+                     ^~~~~~~~~~~
+list.c:72:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+list.c: In function 'pushCurrent':
+list.c:98:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     Node* newNode = create_Node(data);
+                     ^~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+b8e1583
