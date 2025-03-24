@@ -125,6 +125,7 @@ void * popBack(List * list)
 
 void * popCurrent(List * list) 
 {
+    if (!list->current || !list->current->prev || !list ->current -> next)return NULL;
     Node *aux = list->current;
     Node *izq = list-> current -> prev;
     Node *der = list-> current -> next;
