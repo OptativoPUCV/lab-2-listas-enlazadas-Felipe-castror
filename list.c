@@ -96,13 +96,18 @@ void pushBack(List * list, void * data)
 void pushCurrent(List * list, void * data) 
 {
     if (!list -> current)return;
-    
+
     Node* newNode = createNode(data);
     newNode -> prev = list -> current;
     newNode -> next = list -> current -> next;
-    newNode -> prev -> next = newNode;
+
+    if (list -> current -> next)list-> current -> next ->prev =newNode;
+    else
+    {
+        list->tail = newNode;
+    }
     
-    newNode -> next ->prev = newNode;
+    list->current -> next = newNode;
 
 }
 
@@ -129,7 +134,7 @@ void * popCurrent(List * list)
     free(list->current);
     list -> current = NULL;
 
-    return aux;
+    return aux -> data;
 }
 
 void cleanList(List * list) 
